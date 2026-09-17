@@ -1,160 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Clipper Studio</title>
-
-    <meta name="description"
-          content="Clipper Studio is a video content management and publishing platform.">
-
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            background: #f5f7fa;
-            color: #202124;
-        }
-
-        header {
-            background: #111827;
-            color: white;
-            padding: 70px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 42px;
-            margin: 0 0 15px;
-        }
-
-        header p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-        }
-
-        h2 {
-            color: #111827;
-        }
-
-        ul {
-            line-height: 2;
-        }
-
-        .links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .links a {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 35px;
-            color: #6b7280;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cliptography Studio — Intelligent Video Content Platform</title>
+  <meta name="description" content="Cliptography Studio is a video content management and publishing platform for creating, analyzing, managing, scheduling, and publishing video content across supported social platforms.">
+  <meta name="theme-color" content="#07152f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cliptography Studio">
+  <meta property="og:description" content="Intelligent video content creation, management, scheduling, and publishing.">
+  <meta property="og:url" content="https://cliptography-studio.github.io/clipper-studio/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2307152f'/%3E%3Cpath d='M25 48c0-18 12-31 29-31h21v13H54c-9 0-16 7-16 18s7 18 16 18h21v13H54c-17 0-29-13-29-31z' fill='%2311d8ef'/%3E%3Cpath d='M45 35l26 15-26 15z' fill='%23ffb61a'/%3E%3C/svg%3E">
+  <style>
+    :root{--navy:#07152f;--blue:#0879ff;--cyan:#11d8ef;--text:#0f172a;--muted:#526071;--bg:#f5f8fc;--card:#fff;--line:#dce5ef;--shadow:0 12px 35px rgba(7,21,47,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}a{color:#0568d8;text-decoration:none}a:hover{text-decoration:underline}
+    .top{background:linear-gradient(135deg,#061127,#0a2450 58%,#062b61);color:#fff}.nav{max-width:1120px;margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800}.brand-mark{width:46px;height:46px;border-radius:11px;background:linear-gradient(135deg,#11d8ef,#1678ff);display:grid;place-items:center;box-shadow:0 8px 22px rgba(17,216,239,.28)}.brand-mark:after{content:'▶';font-size:19px;color:white;margin-left:3px}.brand span{font-size:20px}.navlinks{display:flex;gap:18px;flex-wrap:wrap}.navlinks a{color:#dcecff;font-size:14px}
+    .hero{max-width:1120px;margin:auto;padding:72px 24px 82px}.hero h1{font-size:clamp(40px,6vw,66px);line-height:1.03;margin:0 0 20px;letter-spacing:-1.8px;max-width:900px}.hero p{font-size:20px;color:#c8d8ec;max-width:820px;margin:0 0 30px}.cta{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:700}.btn.primary{background:linear-gradient(90deg,var(--cyan),#2585ff);color:#041225}.btn.secondary{border:1px solid #59789e;color:#fff}
+    main{max-width:1120px;margin:auto;padding:48px 24px 70px}section{scroll-margin-top:80px;margin-bottom:30px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px;box-shadow:var(--shadow)}h2{font-size:30px;margin:0 0 12px}h3{font-size:19px;margin:0 0 7px}.lead{color:var(--muted);max-width:820px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{padding:24px;border:1px solid var(--line);border-radius:15px;background:#fff}.icon{font-size:28px;margin-bottom:8px}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff}.num{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#e6f7ff;color:#0568d8;font-weight:800;margin-bottom:10px}.platforms{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.platform{padding:12px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;font-weight:700}.notice{background:#eef9ff;border-left:4px solid var(--cyan);padding:18px 20px;border-radius:10px}.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.legal-box{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff}.legal-box a{font-weight:800}footer{background:#07152f;color:#c8d8ec;padding:35px 24px}.foot{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.foot a{color:#fff;margin-right:18px}small{color:#7d8da2}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.legal-grid{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}}
+  </style>
 </head>
-
 <body>
-
-<header>
-    <h1>Clipper Studio</h1>
-    <p>
-        Video content management and publishing platform.
-    </p>
+<header class="top">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span><span>Cliptography Studio</span></a>
+    <div class="navlinks"><a href="#about">About</a><a href="#features">Features</a><a href="#workflow">How It Works</a><a href="#tiktok">TikTok</a><a href="#legal">Legal</a></div>
+  </nav>
+  <div class="hero">
+    <h1>Intelligent Video Content Creation &amp; Publishing</h1>
+    <p>Cliptography Studio helps creators and content teams prepare, analyze, manage, schedule, and publish video content across supported social platforms.</p>
+    <div class="cta"><a class="btn primary" href="#features">Explore the Platform</a><a class="btn secondary" href="#tiktok">TikTok Integration</a></div>
+  </div>
 </header>
-
 <main>
-
-    <section>
-        <h2>About Clipper Studio</h2>
-
-        <p>
-            Clipper Studio helps users manage, process, and publish
-            video content to supported social media platforms.
-        </p>
-
-        <p>
-            The platform is designed to simplify video processing,
-            content management, and authorized publishing workflows
-            across supported social media services.
-        </p>
-    </section>
-
-
-    <section>
-        <h2>Supported Platforms</h2>
-
-        <ul>
-            <li>TikTok</li>
-            <li>YouTube</li>
-            <li>Facebook</li>
-        </ul>
-    </section>
-
-
-    <section>
-        <h2>Social Media Publishing</h2>
-
-        <p>
-            Clipper Studio may connect to supported social media
-            platforms through their official APIs.
-        </p>
-
-        <p>
-            Users remain in control of their connected accounts and
-            must authorize access before Clipper Studio can perform
-            supported actions on their behalf.
-        </p>
-    </section>
-
-
-    <section>
-        <h2>Legal & Privacy</h2>
-
-        <div class="links">
-
-            <a href="privacy.html">
-                Privacy Policy
-            </a>
-
-            <a href="terms.html">
-                Terms of Service
-            </a>
-
-        </div>
-    </section>
-
+  <section id="about"><div class="card"><h2>About Cliptography Studio</h2><p class="lead">Cliptography Studio is a video content management and publishing platform. It combines structured video workflows with content intelligence, channel management, scheduling, and authorized publishing integrations.</p><p>The platform is designed so users can prepare video content, review generated clips and metadata, organize content for different channels, schedule publication, and connect supported social platforms through their official authorization flows.</p></div></section>
+  <section id="features"><div class="card"><h2>Platform Features</h2><p class="lead">An integrated workflow connects content preparation, review, scheduling, and authorized publishing.</p><div class="grid"><article class="feature"><div class="icon">🎬</div><h3>Video Processing</h3><p>Prepare source video and generate short-form content through structured processing workflows.</p></article><article class="feature"><div class="icon">🧠</div><h3>Content Intelligence</h3><p>Analyze content signals, clips, hooks, and channel performance to support content decisions.</p></article><article class="feature"><div class="icon">📊</div><h3>Channel Analytics</h3><p>Use available performance data to understand channel patterns and publishing results.</p></article><article class="feature"><div class="icon">📅</div><h3>Smart Scheduling</h3><p>Organize publishing plans around channel schedules and available publishing slots.</p></article><article class="feature"><div class="icon">🚀</div><h3>Multi-Platform Publishing</h3><p>Manage publishing workflows for supported social media platforms after account authorization.</p></article><article class="feature"><div class="icon">🔐</div><h3>Authorized Connections</h3><p>Connect supported accounts through official authorization flows and use configured permissions.</p></article></div></div></section>
+  <section id="workflow"><div class="card"><h2>How It Works</h2><p class="lead">Processing, review, scheduling, and publishing are separate steps so users can review content before publication.</p><div class="steps"><div class="step"><span class="num">1</span><h3>Prepare</h3><p>Bring video content into the workflow.</p></div><div class="step"><span class="num">2</span><h3>Analyze</h3><p>Process content for clips and metadata.</p></div><div class="step"><span class="num">3</span><h3>Review</h3><p>Review generated content before publication.</p></div><div class="step"><span class="num">4</span><h3>Schedule</h3><p>Assign channels and publishing times.</p></div><div class="step"><span class="num">5</span><h3>Publish</h3><p>Publish through authorized integrations.</p></div></div></div></section>
+  <section><div class="card"><h2>Supported Platforms</h2><p class="lead">Individual features depend on platform integration availability and the permissions approved for the application.</p><div class="platforms"><span class="platform">TikTok</span><span class="platform">YouTube</span><span class="platform">Facebook</span><span class="platform">Instagram</span></div></div></section>
+  <section id="tiktok"><div class="card"><h2>TikTok Integration</h2><p>When a user chooses to connect TikTok, Cliptography Studio uses TikTok's official authorization flow. The connected account is used only for features and permissions configured for the application.</p><div class="notice"><strong>Account authorization:</strong> Authentication and consent take place on TikTok. Cliptography Studio does not ask users to provide their TikTok password.</div><p>For information about connected-account data, see the <a href="privacy.html">Privacy Policy</a>. Service conditions are described in the <a href="terms.html">Terms of Service</a>.</p></div></section>
+  <section><div class="card"><h2>Privacy &amp; Security</h2><p>Cliptography Studio is designed to process information needed for the features users choose to use. Platform authorization credentials are handled as part of the authorized integration, and connected-account information is handled according to the Privacy Policy.</p><p>Users can review the <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a> directly from this public website.</p></div></section>
+  <section id="legal"><div class="card"><h2>Legal Information</h2><div class="legal-grid"><div class="legal-box"><h3>Privacy Policy</h3><p>Information about data collection, use, storage, connected social accounts, and deletion requests.</p><a href="privacy.html">Read Privacy Policy →</a></div><div class="legal-box"><h3>Terms of Service</h3><p>Terms governing use of Cliptography Studio and its third-party social media integrations.</p><a href="terms.html">Read Terms of Service →</a></div></div></div></section>
 </main>
-
-<footer>
-    © 2026 Clipper Studio. All rights reserved.
-</footer>
-
+<footer><div class="foot"><div><strong>Cliptography Studio</strong><br><small>Intelligent video content creation, management, scheduling, and publishing.</small></div><div><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div></footer>
 </body>
 </html>
